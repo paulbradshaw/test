@@ -13,8 +13,11 @@ root = lxml.html.fromstring(html)
 tds = root.cssselect("td")
 #print tds
 for td in tds:
-  print lxml.html.tostring(td)
-  print td.text
+  #print lxml.html.tostring(td)
+  #print td.text
+  record = {'td' : td.text}
+  print record
+  scraperwiki.sqlite.save(['td'],record)
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
