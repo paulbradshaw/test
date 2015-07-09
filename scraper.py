@@ -10,7 +10,7 @@ html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sit
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-tds = root.cssselect("td")
+tds = root.cssselect("table.table.squad.sortable td div")
 #print tds
 indexno = 0
 for td in tds:
