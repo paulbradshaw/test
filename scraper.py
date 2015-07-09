@@ -17,7 +17,8 @@ for td in tds:
   #print lxml.html.tostring(td)
   #print td.text
   indexno = indexno+1
-  record = {'td' : td.text, 'index' : indexno}
+  fullentry = lxml.html.tostring(td)
+  record = {'td' : td.text, 'index' : indexno, 'fullentry' : fullentry}
   print record
   scraperwiki.sqlite.save(['index'],record)
 #
